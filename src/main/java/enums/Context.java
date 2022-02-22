@@ -1,0 +1,5 @@
+package enums;
+
+public enum Context {
+	PRODUCT_NAME, API_RESPONSE, ACCESS_TOKEN, EVENT_ID, USER_EMAIL, USER_PHN, RESOURCE_ID;
+}

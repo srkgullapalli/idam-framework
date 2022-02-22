@@ -1,0 +1,11 @@
+{
+  "tournament" : "Qatar Cup",
+  "eventName" : "Portuguese vs Algeria",
+  "venueDetail" : "Education City Stadium",
+  "eventDate" : "2022-06-18T10:00:00",
+  "eventStart" : "2022-06-18T18:00:00",
+  "eventEnd" : "2022-06-18T20:00:00",
+  "eventId" : "20220120",
+  "stadiumCode": "ECS",
+  "stage":"Group"
+}
