@@ -24,9 +24,9 @@ Feature: User creation and role approval
       | projectName    | Automation           |
       | tag            | Auto                 |
       | ticketID       | 20229873             |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
-    Then Verify Approval Status in User Details Screen
+    Then Verify Status in Search Screen
       | approvalStatus | User Approval Pending |
       | IDAMID         | ####                  |
       | userStatus     | Valid                 |
@@ -39,16 +39,16 @@ Feature: User creation and role approval
       | service | IDAM |
     Then Select sub service for main service selection
       | subService | Pending Approvals |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
     Then navigate to view details screen for the user
     Then Approve or Reject RequestAccess for the user
       | setRoleStatus | approved |
     Then Select sub service for main service selection
       | subService | Users |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
-    Then Verify Approval Status in User Details Screen
+    Then Verify Status in Search Screen
       | approvalStatus | Roles Approved |
     Then Logout of the Application
     
@@ -75,9 +75,9 @@ Feature: User creation and role approval
       | projectName    | Automation           |
       | tag            | Auto                 |
       | ticketID       | 20229873             |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
-    Then Verify Approval Status in User Details Screen
+    Then Verify Status in Search Screen
       | approvalStatus | User Approval Pending |
       | IDAMID         | ####                  |
       | userStatus     | Valid                 |
@@ -90,15 +90,15 @@ Feature: User creation and role approval
       | service | IDAM |
     Then Select sub service for main service selection
       | subService | Pending Approvals |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
     Then navigate to view details screen for the user
     Then Approve or Reject RequestAccess for the user
       | setRoleStatus | reject |
     Then Select sub service for main service selection
       | subService | Users |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
-    Then Verify Approval Status in User Details Screen
+    Then Verify Status in Search Screen
       | approvalStatus | Roles Rejected |
     Then Logout of the Application

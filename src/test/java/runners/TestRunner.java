@@ -10,9 +10,9 @@ import java.io.File;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/testcases", 
 glue = { "stepDefinitions" }, 
-plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/IDAM_Web_AutomationReport.html" }, 
+plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/IDAM_AutomationReport.html" },
 monochrome = true, 
-tags = {"@Smoke"})
+tags = {"@IDAMAPI"})
 
 public class TestRunner {
 	@AfterClass
@@ -26,5 +26,4 @@ public class TestRunner {
 		Reporter.setSystemInfo("Maven", "3.5.2");
 		Reporter.setSystemInfo("Java Version", "1.8.0_151");
 	}
-
 }

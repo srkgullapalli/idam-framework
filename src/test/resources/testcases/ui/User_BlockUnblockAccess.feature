@@ -13,15 +13,15 @@ Feature: Block and Unblock Users
       | subService | Users |
     Then Inject data into testContext
       | phoneNo | 9605773707 |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
     Then navigate to view details screen for the user
     Then Perform Block and UnBlock Access for user
       | action        | Block        |
       | blockComments | BlockingUser |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
-    Then Verify Approval Status in User Details Screen
+    Then Verify Status in Search Screen
       | approvalStatus | Block Access Pending |
     Then Logout of the Application
     Given Launch Application with URL
@@ -32,7 +32,7 @@ Feature: Block and Unblock Users
       | service | IDAM |
     Then Select sub service for main service selection
       | subService | Pending Approvals |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
     Then navigate to view details screen for the user
     Then Approve or Reject Block Access For User
@@ -40,9 +40,9 @@ Feature: Block and Unblock Users
       | blockComments | Approve Block |
     Then Select sub service for main service selection
       | subService | Users |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
-    Then Verify Approval Status in User Details Screen
+    Then Verify Status in Search Screen
       | approvalStatus | Block Access Approved |
       | userStatus     | Blocked               |
     Then Logout of the Application
@@ -59,15 +59,15 @@ Feature: Block and Unblock Users
       | subService | Users |
     Then Inject data into testContext
       | phoneNo | 9605773707 |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
     Then navigate to view details screen for the user
     Then Perform Block and UnBlock Access for user
       | action        | UnBlock     |
       | blockComments | UnblockUser |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
-    Then Verify Approval Status in User Details Screen
+    Then Verify Status in Search Screen
       | approvalStatus | Unblock Access Pending |
     Then Logout of the Application
     Given Launch Application with URL
@@ -78,7 +78,7 @@ Feature: Block and Unblock Users
       | service | IDAM |
     Then Select sub service for main service selection
       | subService | Pending Approvals |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
     Then navigate to view details screen for the user
     Then Approve or Reject Block Access For User
@@ -86,9 +86,9 @@ Feature: Block and Unblock Users
       | blockComments | Approve Unblock |
     Then Select sub service for main service selection
       | subService | Users |
-    Then perform search for user in Users screen with the following
+    Then Perform search using below criteria
       | searchCriteria | phoneNo |
-    Then Verify Approval Status in User Details Screen
+    Then Verify Status in Search Screen
       | approvalStatus | Unblock Access Approved |
       | userStatus     | Valid                   |
     Then Logout of the Application

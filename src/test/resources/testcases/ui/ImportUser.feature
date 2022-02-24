@@ -10,10 +10,6 @@ Feature: Import User Feature
     Then Select the service from the below menu options
       | service | IDAM |
     Then Select sub service for main service selection
-      | subService | Imports |
-    Then Inject data into testContext
-      | phoneNo | 9000448221 |
+      | subService | User Imports |
     Then Perform User import using the file "\src\test\resources\testdata\User_Automation.xlsx"
-    Then Select sub service for main service selection
-      | subService | Users |
     Then Logout of the Application

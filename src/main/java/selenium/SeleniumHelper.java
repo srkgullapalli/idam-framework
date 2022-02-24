@@ -46,15 +46,17 @@ public class SeleniumHelper {
     public static void enterTextIntoTextBox(WebElement textBox, String textToBeEntered) {
         try {
             textBox.sendKeys(textToBeEntered);
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            Assert.fail("Failed to enter text in element=>" + textBox);
         }
     }
 
-    public static void clickElement(WebElement clickable,WebDriver driver) {
+    public static void clickElement(WebElement clickable, WebDriver driver) {
         try {
-        	waitForElementToBeLoaded(clickable,driver);
+            waitForElementToBeLoaded(clickable, driver);
             clickable.click();
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            Assert.fail("Unable to click Element=>" + clickable);
         }
     }
 
@@ -63,19 +65,21 @@ public class SeleniumHelper {
             JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
             jsExecutor.executeScript("arguments[0].scrollIntoView();", element);
             jsExecutor.executeScript("arguments[0].click();", element);
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            Assert.fail("Unable to click Element=>" + element);
         }
     }
 
     public static void selectOptionFromSelectBox(WebElement selectBox, String selection, WebDriver driver) {
         try {
             waitForAngularRequestToFinish();
-            clickElement(selectBox,driver);
+            clickElement(selectBox, driver);
             waitInSeconds(2000);
             WebElement option = driver.findElement(By.xpath("//mat-option[contains(@value,'" + selection + "')]/span"));
-            clickElement(option,driver);
+            clickElement(option, driver);
             waitInSeconds(1000);
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            Assert.fail("Unable to select  element from =>" + selectBox);
         }
     }
 
@@ -86,7 +90,8 @@ public class SeleniumHelper {
             waitInSeconds(2000);
             clickElement_JS(option, driver);
             waitInSeconds(1000);
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            Assert.fail("Unable to select  element from =>" + parent);
         }
     }
 
@@ -153,8 +158,8 @@ public class SeleniumHelper {
     }
 
     public static void fileUploadRobot(String msgPath) throws AWTException {
-        StringSelection ss = new StringSelection(msgPath);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+        StringSelection filePath = new StringSelection(msgPath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filePath, null);
 
         //imitate mouse events like ENTER, CTRL+C, CTRL+V
         Robot robot = new Robot();
@@ -180,6 +185,7 @@ public class SeleniumHelper {
 
     public static void scrollToElementActions(WebDriver driver, WebElement ele) {
         Actions actions = new Actions(driver);
+        waitForElementToBeLoaded(ele, driver);
         actions.moveToElement(ele).build().perform();
     }
 }

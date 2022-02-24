@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CucumberFramework" />
+        <module name="idam-framework" />
         <module name="IDAMCucumberFramework" />
       </profile>
     </annotationProcessing>

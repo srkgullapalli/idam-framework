@@ -58,11 +58,8 @@ public class WebDriverManager {
                 driver = new InternetExplorerDriver();
                 break;
         }
-
-        if (FileReaderManager.getInstance().getConfigReader().getBrowserWindowSize())
-            driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait(),
-                TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        //driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait(),TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         return driver;
     }

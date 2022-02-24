@@ -37,11 +37,12 @@ public class LoginPage {
     public void appLogin(DataTable table) {
         final Map<String, String> hmap = table.asMap(String.class, String.class);
 
-        clickElement(btn_Login,driver);
+        clickElement(btn_Login, driver);
         waitForAngularRequestToFinish();
+        waitForElementToBeLoaded(text_Email, driver);
         enterTextIntoTextBox(text_Email, hmap.get("UserName"));
         enterTextIntoTextBox(text_Password, hmap.get("Password"));
-        clickElement(btn_Singin,driver);
+        clickElement(btn_Singin, driver);
         waitForAngularRequestToFinish();
     }
 
@@ -50,7 +51,7 @@ public class LoginPage {
         clickElement_JS(btn_Profile, driver);
         waitForElementToBeLoaded(btn_Logout, driver);
         clickElement_JS(btn_Logout, driver);
-        clickElement(confirm_Yes,driver);
+        clickElement(confirm_Yes, driver);
         waitForAngularRequestToFinish();
         waitInSeconds(5000);
     }
@@ -58,7 +59,7 @@ public class LoginPage {
     public void launchApp() {
         String appUrl = FileReaderManager.getInstance().getConfigReader().getApplicationUrl();
 
-		driver.get(appUrl);
+        driver.get(appUrl);
         waitForAngularRequestToFinish();
     }
 }

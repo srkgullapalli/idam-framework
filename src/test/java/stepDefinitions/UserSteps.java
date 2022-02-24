@@ -54,9 +54,9 @@ public class UserSteps  {
 
 	}
 
-	@Then("Verify Approval Status in User Details Screen")
+	@Then("Verify Status in Search Screen")
 	public void verifyApprovalStatusInUserDetailsScreen(DataTable table) {
-		userPage.verifyRoleApprovalStatus(testContext,table);
+		userPage.verifySearchStatus(testContext,table);
 	}
 
 	@Then("Perform Block and UnBlock Access for user")
@@ -75,7 +75,7 @@ public class UserSteps  {
 		userPage.importUser(msgPath);
     }
 
-	@Then("perform search for user in Users screen with the following")
+	@Then("Perform search using below criteria")
 	public void performSearchForUserInUsersScreenWithTheFollowing(DataTable table) {
 	userPage.searchUser(table,testContext);
 	}

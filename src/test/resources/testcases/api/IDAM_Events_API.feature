@@ -8,7 +8,6 @@ Feature: IDAM Application Test Event Related Services Post, Update, Delete and G
       | endPoint   | /api/authorize |
       | httpMethod | Post           |
 
-
   @IDAMAPI
   Scenario: To verify Authorized user is able to Post an event
     Then Trigger the API with authToken and request-body "src\test\resources\testdata\PostingEvent.json"
